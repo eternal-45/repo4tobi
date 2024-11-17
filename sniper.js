@@ -1,3 +1,17 @@
+// ==UserScript==
+// @name         Item Notifier
+// @include      http://www.strrev.com/
+// @namespace    http://www.strrev.com/
+// @version      1.5
+// @description  Notifies user when new items are available.
+// @author       eternal45
+// @match        *://www.strrev.com/*
+// @icon         https://www.strrev.com/img/logo_R.svg
+// @grant        none
+// @updateURL    https://raw.githubusercontent.com/eternal-45/repo4tobi/main/sniper.js
+// @downloadURL  https://raw.githubusercontent.com/eternal-45/repo4tobi/main/sniper.js
+// ==/UserScript==
+
 let itemid = 0; // ID of the item
 let interval = 200; // checks every x millisecond
 let token = "";
