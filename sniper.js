@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Item Notifier
+// @name         Item Sniper
 // @include      http://www.strrev.com/
 // @namespace    http://www.strrev.com/
-// @version      1.5
+// @version      1.0
 // @description  Notifies user when new items are available.
 // @author       eternal45
 // @match        *://www.strrev.com/*
