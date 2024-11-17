@@ -1,12 +1,3 @@
-// tremblero#6055
-// ECS item notifier
-
-// REVAMPED 2023 edition
-// Changes:
-// script is a bit unstable but it works most of the time
-// csrf token no longer has a chance to be nullified
-// now auto-buys items!!!!!1!!11
-
 let itemsLimit = 3; // how many pages should it check?
 let interval = 200; // checks every x millisecond
 let redirect = false; //confirm("Would you like to redirect as soon as a new item is found?");
