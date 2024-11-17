@@ -1,3 +1,17 @@
+// ==UserScript==
+// @name         Item Notifier + Autobuy
+// @include      http://www.strrev.com/
+// @namespace    http://www.strrev.com/
+// @version      1.0
+// @description  Notifies user when new items are available.
+// @author       eternal45
+// @match        *://www.strrev.com/*
+// @icon         https://www.strrev.com/img/logo_R.svg
+// @grant        none
+// @updateURL    https://raw.githubusercontent.com/eternal-45/repo4tobi/main/noti%20%2B%20buyer.js
+// @downloadURL  https://raw.githubusercontent.com/eternal-45/repo4tobi/main/noti%20%2B%20buyer.js
+// ==/UserScript==
+
 let itemsLimit = 3; // how many pages should it check?
 let interval = 200; // checks every x millisecond
 let redirect = false; //confirm("Would you like to redirect as soon as a new item is found?");
