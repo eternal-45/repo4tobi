@@ -34,7 +34,7 @@ let RanAssetsCheck = false;
 let maintenance = false;
 let token = "";
 function getToken() {
-  fetch("https://ecsrev.xyz/apisite/catalog/v1/catalog/items/details", {
+  fetch("https://strrev.com/apisite/catalog/v1/catalog/items/details", {
     method: "POST",
   }).then((response) => {
     if (response.headers.get("x-csrf-token") == null) {
@@ -55,7 +55,7 @@ if (!("Notification" in window)) {
 } else if (Notification.permission === "granted") {
   new Notification("Item notifier started!", {
     body: "You will now be notified when a new item drops.",
-    icon: "https://ecsrev.xyz/img/logo_R.svg",
+    icon: "https://strrev.com/img/logo_R.svg",
   });
 } else if (Notification.permission !== "denied") {
   alert(
@@ -65,7 +65,7 @@ if (!("Notification" in window)) {
     if (permission === "granted") {
       new Notification("Item notifier started!", {
         body: "You will now be notified when a new item drops.",
-        icon: "https://ecsrev.xyz/img/logo_R.svg",
+        icon: "https://strrev.com/img/logo_R.svg",
       });
     }
   });
@@ -127,7 +127,7 @@ function check() {
     if (maintenance == false) {
       let newassets = "0|";
       fetch(
-        "https://ecsrev.xyz/apisite/catalog/v1/search/items?category=" +
+        "https://strrev.com/apisite/catalog/v1/search/items?category=" +
           category +
           "&limit=" +
           itemsLimit +
@@ -156,7 +156,7 @@ function check() {
               }
               if (!found && buying == false) {
                 fetch(
-                  "https://ecsrev.xyz/apisite/thumbnails/v1/assets?assetIds=" +
+                  "https://strrev.com/apisite/thumbnails/v1/assets?assetIds=" +
                     asset.id +
                     "&format=png&size=420x420",
                   {
@@ -173,7 +173,7 @@ function check() {
                       "x-csrf-token": token,
                     },
                     referrer:
-                      "https://ecsrev.xyz/catalog/2171/Voltaires-Treasure-Chest-1",
+                      "https://strrev.com/catalog/2171/Voltaires-Treasure-Chest-1",
                     referrerPolicy: "strict-origin-when-cross-origin",
                     body: null,
                     method: "GET",
@@ -184,12 +184,12 @@ function check() {
                   .then((r) => r.json())
                   .then((icon) => {
                     let iconData = icon.data;
-                    let image = "https://ecsrev.xyz/" + iconData[0].imageUrl;
+                    let image = "https://strrev.com/" + iconData[0].imageUrl;
                     notification(
                       "ITEM WENT ONSALE!!!",
                       "Click to redirect!",
                       image,
-                      "https://ecsrev.xyz/catalog/" +
+                      "https://strrev.com/catalog/" +
                         asset.id +
                         "/CLICK-TO-REVEAL-NAME"
                     );
@@ -197,7 +197,7 @@ function check() {
                       "ITEM WENT ONSALE!!!",
                       "Click to redirect!",
                       image,
-                      "https://ecsrev.xyz/catalog/" +
+                      "https://strrev.com/catalog/" +
                         asset.id +
                         "/CLICK-TO-REVEAL-NAME"
                     );
@@ -207,7 +207,7 @@ function check() {
                       buying = true;
                       console.log("sending fetch");
                       fetch(
-                        "https://ecsrev.xyz/apisite/catalog/v1/catalog/items/details",
+                        "https://strrev.com/apisite/catalog/v1/catalog/items/details",
                         {
                           headers: {
                             accept: "application/json, text/plain, */*",
@@ -223,7 +223,7 @@ function check() {
                             "x-csrf-token": token,
                           },
                           referrer:
-                            "https://ecsrev.xyz/catalog/2171/Voltaires-Treasure-Chest-1",
+                            "https://strrev.com/catalog/2171/Voltaires-Treasure-Chest-1",
                           referrerPolicy: "strict-origin-when-cross-origin",
                           body:
                             '{"items":[{"itemType":"Asset","id":"' +
@@ -244,7 +244,7 @@ function check() {
                             if (asset.priceTickets == null) {
                               setTimeout(() => {
                                 fetch(
-                                  "https://ecsrev.xyz/apisite/economy/v1/purchases/products/" +
+                                  "https://strrev.com/apisite/economy/v1/purchases/products/" +
                                     asset.id,
                                   {
                                     headers: {
@@ -262,7 +262,7 @@ function check() {
                                       "x-csrf-token": token,
                                     },
                                     referrer:
-                                      "https://ecsrev.xyz/catalog/1140/Blue-eyed-Awesome-Face",
+                                      "https://strrev.com/catalog/1140/Blue-eyed-Awesome-Face",
                                     referrerPolicy:
                                       "strict-origin-when-cross-origin",
                                     body: JSON.stringify({
@@ -287,7 +287,7 @@ function check() {
                                       asset.price +
                                       " Robux. (Click to view)",
                                     image,
-                                    "https://ecsrev.xyz/catalog/" +
+                                    "https://strrev.com/catalog/" +
                                       asset.id +
                                       "/CLICK-TO-REVEAL-NAME"
                                   );
@@ -296,7 +296,7 @@ function check() {
                             } else {
                               setTimeout(() => {
                                 fetch(
-                                  "https://ecsrev.xyz/apisite/economy/v1/purchases/products/" +
+                                  "https://strrev.com/apisite/economy/v1/purchases/products/" +
                                     asset.id,
                                   {
                                     headers: {
@@ -314,7 +314,7 @@ function check() {
                                       "x-csrf-token": token,
                                     },
                                     referrer:
-                                      "https://ecsrev.xyz/catalog/1140/Blue-eyed-Awesome-Face",
+                                      "https://strrev.com/catalog/1140/Blue-eyed-Awesome-Face",
                                     referrerPolicy:
                                       "strict-origin-when-cross-origin",
                                     body: JSON.stringify({
@@ -338,7 +338,7 @@ function check() {
                                       asset.priceTickets +
                                       " tix. (Click to view)",
                                     image,
-                                    "https://ecsrev.xyz/catalog/" +
+                                    "https://strrev.com/catalog/" +
                                       asset.id +
                                       "/CLICK-TO-REVEAL-NAME"
                                   );
@@ -351,7 +351,7 @@ function check() {
                               "Item was too expensive to auto-buy",
                               "Click to redirect!",
                               "https://i.pinimg.com/originals/b9/42/82/b942828627ec29e4965251121985a5f1.jpg",
-                              "https://ecsrev.xyz/catalog/" +
+                              "https://strrev.com/catalog/" +
                                 asset.id +
                                 "/CLICK-TO-REVEAL-NAME"
                             );
@@ -360,7 +360,7 @@ function check() {
                     }
 
                     if (redirect) {
-                      location.href = `https://ecsrev.xyz/catalog/${asset.id}/CLICK-TO-REVEAL-NAME`;
+                      location.href = `https://strrev.com/catalog/${asset.id}/CLICK-TO-REVEAL-NAME`;
                     }
                   });
               }
