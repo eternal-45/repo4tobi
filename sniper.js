@@ -4,7 +4,7 @@ let token = "";
 
 
 function getToken() {
-  fetch("https://rbx.samu3l.wtf/apisite/catalog/v1/catalog/items/details", {
+  fetch("https://strrev.com/apisite/catalog/v1/catalog/items/details", {
     method: "POST",
   }).then((response) => {
     if (response.headers.get("x-csrf-token") == null) {
@@ -25,7 +25,7 @@ if (!("Notification" in window)) {
 } else if (Notification.permission === "granted") {
   new Notification("Item notifier started!", {
     body: "You will now be notified when a new item drops.",
-    icon: "https://rbx.samu3l.wtf/img/logo_R.svg",
+    icon: "https://strrev.com/img/logo_R.svg",
   });
 } else if (Notification.permission !== "denied") {
   alert(
@@ -35,7 +35,7 @@ if (!("Notification" in window)) {
     if (permission === "granted") {
       new Notification("Item notifier started!", {
         body: "You will now be notified when a new item drops.",
-        icon: "https://rbx.samu3l.wtf/img/logo_R.svg",
+        icon: "https://strrev.com/img/logo_R.svg",
       });
     }
   });
@@ -67,7 +67,7 @@ function notification(title, text, image, redirect) {
 }
 
 function check() {
-  fetch("https://rbx.samu3l.wtf/apisite/catalog/v1/catalog/items/details", {
+  fetch("https://strrev.com/apisite/catalog/v1/catalog/items/details", {
     headers: {
       accept: "application/json, text/plain, */*",
       "accept-language": "en-US,en;q=0.9",
@@ -81,7 +81,7 @@ function check() {
       "sec-fetch-site": "same-origin",
       "x-csrf-token": token,
     },
-    referrer: "https://rbx.samu3l.wtf/catalog/18486/Brighteyes-Top-Hat",
+    referrer: "https://strrev.com/catalog/18486/Brighteyes-Top-Hat",
     referrerPolicy: "strict-origin-when-cross-origin",
     body: '{"items":[{"itemType":"Asset","id":"'+itemid+'"}]}',
     method: "POST",
@@ -94,7 +94,7 @@ function check() {
       console.log(pack.saleCount);
       if (pack.saleCount == 9) {
         fetch(
-          "https://rbx.samu3l.wtf/apisite/economy/v1/purchases/products/" +
+          "https://strrev.com/apisite/economy/v1/purchases/products/" +
             pack.id,
           {
             headers: {
@@ -111,7 +111,7 @@ function check() {
               "x-csrf-token": token,
             },
             referrer:
-              "https://rbx.samu3l.wtf/catalog/1140/Blue-eyed-Awesome-Face",
+              "https://strrev.com/catalog/1140/Blue-eyed-Awesome-Face",
             referrerPolicy: "strict-origin-when-cross-origin",
             body: JSON.stringify({
               assetId: pack.id,
@@ -135,7 +135,7 @@ function check() {
               pack.price +
               " Robux. (Click to view)",
             image,
-            "https://rbx.samu3l.wtf/catalog/" +
+            "https://strrev.com/catalog/" +
               pack.id +
               "/CLICK-TO-REVEAL-NAME"
           );
